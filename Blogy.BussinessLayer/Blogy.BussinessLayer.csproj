@@ -7,12 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Folder Include="Abstract\" />
+    <Folder Include="Container\" />
     <Folder Include="Concrete\" />
-    <Folder Include="UnitOfWork\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Blogy.EntityLayer\Blogy.EntityLayer.csproj" />
+    <Folder Include="ErrorMessage\" />
+    <Folder Include="Logging\" />
   </ItemGroup>
 
 </Project>

@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.7.34202.233
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogy.WebUserInterface", "Blogy.WebUserInterface\Blogy.WebUserInterface.csproj", "{B09AE518-117D-4A9D-9496-2464C0AEAAAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogy.WebUserInterface", "Blogy.WebUserInterface\Blogy.WebUserInterface.csproj", "{B09AE518-117D-4A9D-9496-2464C0AEAAAE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogy.EntityLayer", "Blogy.EntityLayer\Blogy.EntityLayer.csproj", "{DB14099E-E98E-4B35-B2FB-95FF68F12ACE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogy.EntityLayer", "Blogy.EntityLayer\Blogy.EntityLayer.csproj", "{DB14099E-E98E-4B35-B2FB-95FF68F12ACE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogy.DataAccessLayer", "Blogy.DataAccessLayer\Blogy.DataAccessLayer.csproj", "{EF05D016-6A4F-4981-B454-46A3631DE920}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Blogy.DataAccessLayer", "Blogy.DataAccessLayer\Blogy.DataAccessLayer.csproj", "{EF05D016-6A4F-4981-B454-46A3631DE920}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blogy.BussinessLayer", "Blogy.BussinessLayer\Blogy.BussinessLayer.csproj", "{930922E7-2225-4DAB-9473-BDA5A4E4EEB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{EF05D016-6A4F-4981-B454-46A3631DE920}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EF05D016-6A4F-4981-B454-46A3631DE920}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EF05D016-6A4F-4981-B454-46A3631DE920}.Release|Any CPU.Build.0 = Release|Any CPU
+		{930922E7-2225-4DAB-9473-BDA5A4E4EEB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{930922E7-2225-4DAB-9473-BDA5A4E4EEB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{930922E7-2225-4DAB-9473-BDA5A4E4EEB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{930922E7-2225-4DAB-9473-BDA5A4E4EEB3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
