@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blogy.DataAccessLayer.Abstract.GnericDal
+namespace Blogy.DataAccessLayer.Abstract.GenericDal
 {
     public interface IGenericDal<TEntity> where TEntity : class
     {

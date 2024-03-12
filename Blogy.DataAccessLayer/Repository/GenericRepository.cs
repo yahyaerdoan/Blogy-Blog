@@ -1,4 +1,4 @@
-﻿using Blogy.DataAccessLayer.Abstract.GnericDal;
+﻿using Blogy.DataAccessLayer.Abstract.GenericDal;
 using Blogy.DataAccessLayer.Context;
 using System;
 using System.Collections.Generic;
@@ -11,6 +11,12 @@ namespace Blogy.DataAccessLayer.Repository
     public class GenericRepository<TEntity> : IGenericDal<TEntity> where TEntity : class
     {
         private readonly BlogyContext _context;
+
+        public GenericRepository(BlogyContext context)
+        {
+            _context = context;
+        }
+
         public void Add(TEntity entity)
         {
             var values =_context.Set<TEntity>().Add(entity);
