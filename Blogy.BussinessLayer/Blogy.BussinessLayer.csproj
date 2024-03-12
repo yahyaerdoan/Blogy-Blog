@@ -7,11 +7,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Abstract\" />
     <Folder Include="Container\" />
-    <Folder Include="Concrete\" />
     <Folder Include="ErrorMessage\" />
     <Folder Include="Logging\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Blogy.DataAccessLayer\Blogy.DataAccessLayer.csproj" />
   </ItemGroup>
 
 </Project>

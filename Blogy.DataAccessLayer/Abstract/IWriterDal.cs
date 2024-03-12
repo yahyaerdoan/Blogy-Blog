@@ -1,4 +1,5 @@
-﻿using Blogy.EntityLayer.Concrete;
+﻿using Blogy.DataAccessLayer.Abstract.GnericDal;
+using Blogy.EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
