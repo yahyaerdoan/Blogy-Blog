@@ -12,11 +12,6 @@ namespace Blogy.DataAccessLayer.Repository
     {
         private readonly BlogyContext _context;
 
-        public GenericRepository(BlogyContext context)
-        {
-            _context = context;
-        }
-
         public void Add(TEntity entity)
         {
             var values =_context.Set<TEntity>().Add(entity);
