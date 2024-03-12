@@ -15,12 +15,28 @@ namespace Blogy.BussinessLayer.Concrete
 
         public void TAdd(Article entity)
         {
-            _articledal.Add(entity);
+            if (entity.Title!= null && entity.Description.Length>50 && entity.CategoryId >=0)
+            {
+                _articledal.Add(entity);
+            }
+            else
+            {
+                //throw exception
+            }
+
         }
 
         public void TDelete(int id)
         {
-            _articledal.Delete(id);
+            if (id !=  0)
+            {
+                _articledal.Delete(id);
+            }
+            else
+            {
+                //throw exception
+            }
+            
         }
 
         public Article TGetById(int id)
@@ -35,7 +51,15 @@ namespace Blogy.BussinessLayer.Concrete
 
         public void TUpdate(Article entity)
         {
-            _articledal.Update(entity);
+            if(entity.Title is not null && entity.Description.Length > 50 && entity.CategoryId >= 0)
+            {
+                _articledal.Update(entity);
+            }
+            else
+            {
+                //throw exception
+            } 
+            
         }
     }
 }
