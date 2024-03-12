@@ -8,9 +8,24 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 #region Dependency enjection
+
 builder.Services.AddDbContext<BlogyContext>();
+
 builder.Services.AddScoped<ICategoryDal, EfCategoryDal>();
 builder.Services.AddScoped<ICategoryService, CategoryManager>();
+
+builder.Services.AddScoped<IArticleDal, EfArticleDal>();
+builder.Services.AddScoped<IArticleService, AricleManager>();
+
+builder.Services.AddScoped<ICommentDal, EfCommentDal>();
+builder.Services.AddScoped<ICommentService, CommentManager>();
+
+builder.Services.AddScoped<ITagDal, EfTagDal>();
+builder.Services.AddScoped<ITagService, TagManager>();
+
+builder.Services.AddScoped<IWriterDal, EfWriterDal>();
+builder.Services.AddScoped<IWrierService, WriterManager>();
+
 #endregion
 builder.Services.AddControllersWithViews();
 
