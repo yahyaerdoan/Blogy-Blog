@@ -42,5 +42,11 @@ namespace Blogy.BussinessLayer.Concrete
         {
             _categoryDal.Update(entity);
         }
+
+        public int TGetCategoryCount()
+        {
+            var values = _categoryDal.GetCategoyCount();
+            return values;
+        }
     }
 }

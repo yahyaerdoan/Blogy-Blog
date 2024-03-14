@@ -10,7 +10,8 @@ namespace Blogy.DataAccessLayer.Repository
 {
     public class GenericRepository<TEntity> : IGenericDal<TEntity> where TEntity : class
     {
-        private readonly BlogyContext _context;
+        //private readonly BlogyContext _context;
+        BlogyContext _context = new BlogyContext();
 
         public void Add(TEntity entity)
         {

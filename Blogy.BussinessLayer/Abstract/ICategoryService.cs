@@ -5,5 +5,6 @@ namespace Blogy.BussinessLayer.Abstract
 {
     public interface ICategoryService : IGenericService<Category>
     {
+        int TGetCategoryCount();
     }
 }
