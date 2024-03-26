@@ -22,30 +22,37 @@ namespace Blogy.WebUserInterface.Controllers.AdminController
         [HttpPost]
         public async Task<IActionResult> Index(CreateRegisteriewModel createRegisteriewModel)
         {
-            AppUser appUser = new AppUser()
+            if (createRegisteriewModel.Password != null)
             {
-                FirstName = createRegisteriewModel.FirstName,
-                LastName = createRegisteriewModel.LastName,
-                Email = createRegisteriewModel.Email,
-                UserName = createRegisteriewModel.Username,
-                Description = "aa",
-                Image="aa"
-            };
+                AppUser appUser = new AppUser()
+                {
+                    FirstName = createRegisteriewModel.FirstName,
+                    LastName = createRegisteriewModel.LastName,
+                    Email = createRegisteriewModel.Email,
+                    UserName = createRegisteriewModel.Username,
+                    Description = "aa",
+                    Image = "aa"
+                };
 
-            var result = await _userManager.CreateAsync(appUser, createRegisteriewModel.Password);
-            if (result.Succeeded)
-            {
-                return RedirectToAction("Index", "Login");
+                var result = await _userManager.CreateAsync(appUser, createRegisteriewModel.Password);
+                if (result.Succeeded)
+                {
+                    return RedirectToAction("Index", "Login");
+                }
+                else
+                {
+                    foreach (var item in result.Errors)
+                    {
+                        ModelState.AddModelError("", item.Description);
+                    }
+                }
+                return View();
             }
             else
             {
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError("", item.Description);
-                }
-            }
-            return View();
-            
+                ModelState.AddModelError("", "Password can not be empty");
+                return View();
+            }            
         }
     }
 }

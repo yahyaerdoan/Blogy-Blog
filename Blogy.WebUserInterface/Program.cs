@@ -4,6 +4,7 @@ using Blogy.DataAccessLayer.Abstract;
 using Blogy.DataAccessLayer.Context;
 using Blogy.DataAccessLayer.EntityFramework;
 using Blogy.EntityLayer.Concrete;
+using Blogy.WebUserInterface.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -27,7 +28,9 @@ builder.Services.AddScoped<ITagService, TagManager>();
 builder.Services.AddScoped<IWriterDal, EfWriterDal>();
 builder.Services.AddScoped<IWrierService, WriterManager>();
 
-builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<BlogyContext>();
+builder.Services.AddIdentity<AppUser, AppRole>()
+    .AddEntityFrameworkStores<BlogyContext>()
+    .AddErrorDescriber<CustomIdentityValidator>();
 
 #endregion
 builder.Services.AddControllersWithViews();

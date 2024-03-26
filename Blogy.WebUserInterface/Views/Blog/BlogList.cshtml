@@ -1,0 +1,21 @@
+﻿@{
+    Layout = null;
+}
+
+<!-- /*
+* Template Name: Blogy
+* Template Author: Untree.co
+* Template URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
+<html lang="en">
+@await Component.InvokeAsync("_BlogListHeadComponentPartial")
+<body>
+	@await Component.InvokeAsync("_BlogListNavigationBarComponentPartial")	
+	@await Component.InvokeAsync("_BlogListBlogListSectionComponentPartial")
+	@await Component.InvokeAsync("_BlogListFooterBarComponentPartial")
+	@await Component.InvokeAsync("_BlogListLoaderBarComponentPartial")
+	@await Component.InvokeAsync("_BlogListScriptComponentPartial")
+</body>
+</html>
