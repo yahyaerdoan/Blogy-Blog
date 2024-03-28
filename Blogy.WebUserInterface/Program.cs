@@ -26,7 +26,7 @@ builder.Services.AddScoped<ITagDal, EfTagDal>();
 builder.Services.AddScoped<ITagService, TagManager>();
 
 builder.Services.AddScoped<IWriterDal, EfWriterDal>();
-builder.Services.AddScoped<IWrierService, WriterManager>();
+builder.Services.AddScoped<IWriterService, WriterManager>();
 
 builder.Services.AddIdentity<AppUser, AppRole>()
     .AddEntityFrameworkStores<BlogyContext>()

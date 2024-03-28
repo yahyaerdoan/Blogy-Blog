@@ -4,7 +4,7 @@ using Blogy.EntityLayer.Concrete;
 
 namespace Blogy.BussinessLayer.Concrete
 {
-    public class WriterManager : IWrierService
+    public class WriterManager : IWriterService
     {
         private readonly IWriterDal _writerDal;
 

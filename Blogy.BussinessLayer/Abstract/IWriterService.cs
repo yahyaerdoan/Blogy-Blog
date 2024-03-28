@@ -3,7 +3,7 @@ using Blogy.EntityLayer.Concrete;
 
 namespace Blogy.BussinessLayer.Abstract
 {
-    public interface IWrierService : IGenericService<Writer>
+    public interface IWriterService : IGenericService<Writer>
     {
     }
 }

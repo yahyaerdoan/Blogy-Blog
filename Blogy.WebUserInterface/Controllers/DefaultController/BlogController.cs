@@ -1,21 +1,14 @@
 ﻿using Blogy.BussinessLayer.Abstract;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace Blogy.WebUserInterface.Controllers.DefaultController
 {
 	public class BlogController : Controller
 	{
-		private readonly IArticleService _articleService;
-
-		public BlogController(IArticleService articleService)
-		{
-			_articleService = articleService;
-		}
-
 		public IActionResult BlogList()
-		{
-			var values = _articleService.TGetListAll();
-			return View(values);
+		{		
+			return View();
 		}
 	}
 }
