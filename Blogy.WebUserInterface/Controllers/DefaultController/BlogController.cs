@@ -10,5 +10,10 @@ namespace Blogy.WebUserInterface.Controllers.DefaultController
 		{		
 			return View();
 		}
+
+		public IActionResult BlogDetail()
+		{
+			return View();
+		}
 	}
 }
