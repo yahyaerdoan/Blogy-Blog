@@ -1,12 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Blogy.WebUserInterface.BlogDetailsViewComponents
+namespace Blogy.WebUserInterface.ViewComponents.BlogListViewComponents
 {
-    public class _BlogDetailByBlogContentComponentPartial : ViewComponent
+    public class _BlogListFooterBarComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {
             return View();
         }
     }
+
 }

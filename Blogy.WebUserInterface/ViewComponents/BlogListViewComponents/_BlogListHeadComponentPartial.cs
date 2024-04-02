@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 
-namespace Blogy.WebUserInterface.BlogDetailsViewComponents
+namespace Blogy.WebUserInterface.ViewComponents.BlogListViewComponents
 {
-    public class _BlogDetailByLeaveACommentComponentPartial : ViewComponent
+    public class _BlogListHeadComponentPartial : ViewComponent
     {
         public IViewComponentResult Invoke()
         {
