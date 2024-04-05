@@ -5,5 +5,7 @@ namespace Blogy.BussinessLayer.Abstract
 {
     public interface ICommentService : IGenericService<Comment>
     {
-    }
+		List<Comment> TGetCommentsByArticleId(int id);
+
+	}
 }

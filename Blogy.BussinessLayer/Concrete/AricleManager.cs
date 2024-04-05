@@ -13,6 +13,7 @@ namespace Blogy.BussinessLayer.Concrete
             _articledal = articledal;
         }
 
+      
         public void TAdd(Article entity)
         {
             if (entity.Title!= null && entity.Description.Length>50 && entity.CategoryId >=0)
@@ -52,6 +53,12 @@ namespace Blogy.BussinessLayer.Concrete
         public List<Article> TGetListAll()
         {
             return _articledal.GetListAll();
+        }
+
+        public Writer TGetWriterInfoByArticleWriter(int id)
+        {
+            var values = _articledal.GetWriterInfoByArticleWriter(id);
+            return values;
         }
 
         public void TUpdate(Article entity)

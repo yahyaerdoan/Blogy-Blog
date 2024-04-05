@@ -1,12 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Blogy.BussinessLayer.Abstract;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Blogy.WebUserInterface.ViewComponents.BlogDetailViewComponent
 {
     public class _BlogDetailByBlogContentComponentPartial : ViewComponent
     {
-        public IViewComponentResult Invoke()
+        private readonly IArticleService _articleService;
+
+		public _BlogDetailByBlogContentComponentPartial(IArticleService articleService)
+		{
+			_articleService = articleService;
+		}
+
+		public IViewComponentResult Invoke(int id)
         {
-            return View();
+            var values = _articleService.TGetById(id);
+            return View(values);
         }
     }
 }

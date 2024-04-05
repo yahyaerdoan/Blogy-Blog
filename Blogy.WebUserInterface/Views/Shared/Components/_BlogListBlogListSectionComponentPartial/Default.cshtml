@@ -15,19 +15,16 @@
 			{
 				<div class="col-lg-4 mb-4">
 					<div class="post-entry-alt">
-						<a href="single.html" class="img-link"><img src="@item.CoverImageUrl" style="width:412px; height:276px" alt="Image" class="img-fluid"></a>
+						<a href="/Blog/BlogDetail/@item.ArticleId" class="img-link"><img src="@item.CoverImageUrl" style="width:412px; height:276px" alt="Image" class="img-fluid"></a>
 						<div class="excerpt">
-
-
-							<h2><a href="single.html">@item.Title</a></h2>
+							<h2><a href="/Blog/BlogDetail/@item.ArticleId">@item.Title</a></h2>
 							<div class="post-meta align-items-center text-left clearfix">
 								<figure class="author-figure mb-0 me-3 float-start"><img src="@item.Writer.Image" alt="Image" class="img-fluid"></figure>
 								<span class="d-inline-block mt-1">By <a href="#">@item.Writer.FirstName @item.Writer.LastName &nbsp;-&nbsp; @item.Category.Name</a></span>
 								<span>&nbsp;-&nbsp; @item.CreatedDate.ToLongDateString()</span>
 							</div>
-
 							<p>@item.Description.Substring(0,150)...</p>
-							<p><a href="/Blog/BlogDetail/" class="read-more">Continue Reading</a></p>
+							<p><a href="/Blog/BlogDetail/@item.ArticleId" class="read-more">Continue Reading</a></p>
 						</div>
 					</div>
 				</div>

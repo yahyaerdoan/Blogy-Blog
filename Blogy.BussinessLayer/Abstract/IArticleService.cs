@@ -11,5 +11,6 @@ namespace Blogy.BussinessLayer.Abstract
     public interface IArticleService : IGenericService<Article>
     {
         public List<Article> TGetArticlesWithWriter();
+        Writer TGetWriterInfoByArticleWriter(int id);
     }
 }

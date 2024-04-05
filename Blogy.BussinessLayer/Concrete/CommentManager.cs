@@ -28,7 +28,13 @@ namespace Blogy.BussinessLayer.Concrete
             return _commentDal.GetById(id);
         }
 
-        public List<Comment> TGetListAll()
+		public List<Comment> TGetCommentsByArticleId(int id)
+		{
+            var values = _commentDal.GetCommentsByArticleId(id);
+            return values;
+		}
+
+		public List<Comment> TGetListAll()
         {
             return _commentDal.GetListAll();
         }

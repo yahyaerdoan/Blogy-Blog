@@ -17,5 +17,11 @@ namespace Blogy.DataAccessLayer.EntityFramework
 				ToList();
 			return values;
 		}
-	}
+
+        public Writer GetWriterInfoByArticleWriter(int id)
+        {
+            var values = _context.Articles.Where(a=> a.ArticleId == id).Select(b=> b.Writer).FirstOrDefault();
+			return values;
+        }
+    }
 }

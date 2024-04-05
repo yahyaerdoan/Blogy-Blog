@@ -10,22 +10,22 @@
 */ -->
 <!doctype html>
 <html lang="en">
-@await Component.InvokeAsync("_BlogListHeadComponentPartial")
+@await Component.InvokeAsync("_BlogListHeadComponentPartial", new {id= ViewBag.Id})
 <body>
     @await Component.InvokeAsync("_BlogListNavigationBarComponentPartial")
-    @await Component.InvokeAsync("_BlogDetailByCoverInfoComponentPartial")
+    @await Component.InvokeAsync("_BlogDetailByCoverInfoComponentPartial", new {id= ViewBag.Id})
     <section class="section">
         <div class="container">
             <div class="row blog-entries element-animate">
                 <div class="col-md-12 col-lg-8 main-content">
-                    @await Component.InvokeAsync("_BlogDetailByBlogContentComponentPartial")
+                    @await Component.InvokeAsync("_BlogDetailByBlogContentComponentPartial", new {id= ViewBag.Id})
                     <div class="pt-5">
                         <p>Categories:  <a href="#">Food</a>, <a href="#">Travel</a>  Tags: <a href="#">#manila</a>, <a href="#">#asia</a></p>
                     </div>
                     <div class="pt-5 comment-wrap">
-                        @await Component.InvokeAsync("_BlogDetailByBlogCommentComponentPartial")
+                        @await Component.InvokeAsync("_BlogDetailByBlogCommentComponentPartial", new {id= ViewBag.Id})
                         <!-- END comment-list -->
-                        @await Component.InvokeAsync("_BlogDetailByLeaveACommentComponentPartial")
+                        @await Component.InvokeAsync("_BlogDetailByLeaveACommentComponentPartial", new {id= ViewBag.Id})
                     </div>
                 </div>
                 <!-- END main-content -->
@@ -37,14 +37,14 @@
                         </form>
                     </div>
                     <!-- END sidebar-box -->
-                    @await Component.InvokeAsync("_BlogDetailByWriterInformationComponentPartial")
+                    @await Component.InvokeAsync("_BlogDetailByWriterInformationComponentPartial", new {id= ViewBag.Id})
                     <!-- END sidebar-box -->
-                    @await Component.InvokeAsync("_BlogDetailByWriterPopularPostsComponentPartial")
+                    @await Component.InvokeAsync("_BlogDetailByWriterPopularPostsComponentPartial", new {id= ViewBag.Id})
 
                     <!-- END sidebar-box -->
-                    @await Component.InvokeAsync("_BlogDetailByCategoriesComponentPartial")
+                    @await Component.InvokeAsync("_BlogDetailByCategoriesComponentPartial", new {id= ViewBag.Id})
                     <!-- END sidebar-box -->
-                    @await Component.InvokeAsync("_BlogDetailByTagsCommentComponentPartial")
+                    @await Component.InvokeAsync("_BlogDetailByTagsCommentComponentPartial", new {id= ViewBag.Id})
                 </div>
                 <!-- END sidebar -->
             </div>
@@ -52,11 +52,11 @@
     </section>
 
     <!-- Start posts-entry -->
-    @await Component.InvokeAsync("_BlogDetailByOtherCommentComponentPartial")
+    @await Component.InvokeAsync("_BlogDetailByOtherCommentComponentPartial", new {id= ViewBag.Id})
     <!-- End posts-entry -->
-    @await Component.InvokeAsync("_BlogListFooterBarComponentPartial")
+    @await Component.InvokeAsync("_BlogListFooterBarComponentPartial", new {id= ViewBag.Id})
     <!-- Preloader -->
-    @await Component.InvokeAsync("_BlogListLoaderBarComponentPartial")
+    @await Component.InvokeAsync("_BlogListLoaderBarComponentPartial", new {id= ViewBag.Id})
     @await Component.InvokeAsync("_BlogListScriptComponentPartial")
 </body>
 </html>
