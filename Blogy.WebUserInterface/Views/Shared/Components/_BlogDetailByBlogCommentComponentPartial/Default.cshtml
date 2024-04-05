@@ -1,17 +1,23 @@
-﻿<h3 class="mb-5 heading">6 Comments</h3>
+﻿@model List<Comment>
+<h3 class="mb-5 heading">@Model.Count Comments</h3>
 <ul class="comment-list">
-    <li class="comment">
-        <div class="vcard">
-            <img src="~/template/blogy-1.0.0/images/person_1.jpg" alt="Image placeholder">
-        </div>
-        <div class="comment-body">
-            <h3>Jean Doe</h3>
-            <div class="meta">January 9, 2018 at 2:21pm</div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quidem laborum necessitatibus, ipsam impedit vitae autem, eum officia, fugiat saepe enim sapiente iste iure! Quam voluptas earum impedit necessitatibus, nihil?</p>
-            <p><a href="#" class="reply rounded">Reply</a></p>
-        </div>
-    </li>
 
+    @foreach (var item in Model)
+    {
+        <li class="comment">
+            <div class="vcard">
+                <img src="~/template/blogy-1.0.0/images/person_1.jpg" alt="Image placeholder">
+            </div>
+            <div class="comment-body">
+                <h3>@item.FirstName @item.LastName</h3>
+                <div class="meta">@item.Date.ToLocalTime()</div>
+                <p>@item.Content</p>
+                <p><a href="#" class="reply rounded">Reply</a></p>
+            </div>
+        </li>
+
+    }
+    
     <li class="comment">
         <div class="vcard">
             <img src="~/template/blogy-1.0.0/images/person_2.jpg" alt="Image placeholder">
