@@ -19,4 +19,12 @@
     <ProjectReference Include="..\Blogy.DataAccessLayer\Blogy.DataAccessLayer.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Areas\" />
+    <Folder Include="Areas\Blogy.WriterArea\Controllers\" />
+    <Folder Include="Areas\Blogy.WriterArea\Data\" />
+    <Folder Include="Areas\Blogy.WriterArea\Models\" />
+    <Folder Include="Areas\Blogy.WriterArea\Views\" />
+  </ItemGroup>
+
 </Project>
