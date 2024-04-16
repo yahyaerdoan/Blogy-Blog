@@ -20,11 +20,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Areas\" />
-    <Folder Include="Areas\Blogy.WriterArea\Controllers\" />
-    <Folder Include="Areas\Blogy.WriterArea\Data\" />
-    <Folder Include="Areas\Blogy.WriterArea\Models\" />
-    <Folder Include="Areas\Blogy.WriterArea\Views\" />
+    <Folder Include="Areas\Writer\Data\" />
+    <Folder Include="Areas\Writer\Models\" />
   </ItemGroup>
 
 </Project>
