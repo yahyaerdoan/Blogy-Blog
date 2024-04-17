@@ -25,7 +25,7 @@
             </div>
             @await Component.InvokeAsync("_LayoutNavBarComponentPartial")
             <div class="main-panel">
-                @*@RenderBody()*@
+                @RenderBody()
                 @await Component.InvokeAsync("_LayoutFooterComponentPartial")
             </div>
             <!-- main-panel ends -->
@@ -33,6 +33,5 @@
         <!-- page-body-wrapper ends -->
     </div>
     @await Component.InvokeAsync("_LayoutScriptComponentPartial")
-
 </body>
 </html>

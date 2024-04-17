@@ -9,7 +9,14 @@ namespace Blogy.DataAccessLayer.EntityFramework
 	public class EfArticleDal : GenericRepository<Article>, IArticleDal
 	{
 		BlogyContext _context = new BlogyContext();
-		public List<Article> GetArticlesWithWriter()
+
+        public List<Article> GetArticlesByWriterId(int id)
+        {
+            var values = _context.Articles.Where(a=> a.WriterId == id).ToList();
+			return values;
+        }
+
+        public List<Article> GetArticlesWithWriter()
 		{
 			var values = _context.Articles.
 				Include(a=> a.Writer).
