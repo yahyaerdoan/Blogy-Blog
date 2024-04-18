@@ -40,7 +40,12 @@ namespace Blogy.BussinessLayer.Concrete
             
         }
 
-		public List<Article> TGetArticlesWithWriter()
+        public List<Article> TGetArticlesByWriterId(int id)
+        {
+            return _articledal.GetArticlesByWriterId(id);
+        }
+
+        public List<Article> TGetArticlesWithWriter()
 		{
 			return _articledal.GetArticlesWithWriter();
 		}

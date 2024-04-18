@@ -12,5 +12,6 @@ namespace Blogy.BussinessLayer.Abstract
     {
         public List<Article> TGetArticlesWithWriter();
         Writer TGetWriterInfoByArticleWriter(int id);
+        List<Article> TGetArticlesByWriterId(int id);
     }
 }
