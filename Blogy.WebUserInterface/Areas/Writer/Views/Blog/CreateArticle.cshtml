@@ -1,0 +1,71 @@
+﻿@model Article
+@{
+    ViewData["Title"] = "CreateArticle";
+    Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
+}
+
+<div class="content-wrapper">
+    <div class="page-header">
+        <h3 class="page-title">Create New Article</h3>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                <li class="breadcrumb-item active" aria-current="page">  @ViewData["Title"]</li>
+            </ol>
+        </nav>
+    </div>
+    <div class="row">
+        <div class="col-12 grid-margin stretch-card">
+            <div class="card">
+                <div class="card-body">
+                    <h4 class="card-title">New Article Information</h4>
+                    <form class="forms-sample" method="post" action="">
+                        <div class="form-group">
+                            <label for="exampleInputName1">Title</label>
+                            <input type="text" class="form-control" id="exampleInputName1" placeholder="title" asp-for="Title" />
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputCategory">Category</label>
+                            @Html.DropDownListFor(c=> c.CategoryId, (List<SelectListItem>) ViewBag.CategoryName,"select a categoy", new {@class="form-control"})
+                        </div>
+                        @{
+                            #region Test
+                            @*    <div class="form-group">
+                        <label for="exampleSelectGender">Gender</label>
+                        <select class="form-control" id="exampleSelectGender">
+                        <option>Male</option>
+                        <option>Female</option>
+                        </select>
+                        </div> *@
+
+                            @*      <div class="form-group">
+                        <label>File upload</label>
+                        <input type="file" name="img[]" class="file-upload-default" />
+                        <div class="input-group col-xs-12">
+                        <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image" />
+                        <span class="input-group-append">
+                        <button class="file-upload-browse btn btn-primary" type="button"> Upload </button>
+                        </span>
+                        </div>
+                        </div> *@
+                            #endregion
+                        }
+                        <div class="form-group">
+                            <label for="exampleInputImage">Cover Image Url</label>
+                            <input type="text" class="form-control" id="exampleInputImage" placeholder="image url" asp-for="CoverImageUrl" />
+                        </div>                                     
+                        <div class="form-group">
+                            <label for="exampleTextarea1">Description</label>
+                            <textarea class="form-control"
+                                      id="exampleTextarea1"
+                                      rows="19" placeholder="description" asp-for="Description"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary mr-2"> Submit </button>
+                        <button class="btn btn-light">Cancel</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,4 +1,4 @@
-﻿@model List<Blogy.EntityLayer.Concrete.Article>
+﻿@model List<Article>
 @{
     ViewData["Title"] = "MyBlogList";
     Layout = "~/Areas/Writer/Views/WriterLayout/Index.cshtml";
@@ -9,7 +9,7 @@
         <h3 class="page-title">Writer's Blog List</h3>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Tables</a></li>
+                    <li class="breadcrumb-item"><a href="">Tables</a></li>
                 <li class="breadcrumb-item active" aria-current="page">  @ViewData["Title"]</li>
                 </ol>
             </nav>
@@ -44,13 +44,13 @@
                                         <td>@item.CategoryId</td>
                                         <td>@item.CreatedDate</td>
                                         <td><a href="#" class="btn btn-success">Update</a></td>
-                                        <td><a href="#" class="btn btn-danger">Delete</a></td>
+                                        <td><a href="/Writer/Blog/DeleteArticle/@item.ArticleId" class="btn btn-danger">Delete</a></td>
                                         <td><a href="#" class="btn btn-warning">Comments</a></td>
                                     </tr>
                                 }                                                                    
                                 </tbody>
                             </table>
-                        <a href="#" class="btn btn-primary">Create new blog</a>
+                        <a href="/Writer/Blog/CreateArticle" class="btn btn-primary">Create New Blog</a>
                         </div>
                     </div>
                 </div>
