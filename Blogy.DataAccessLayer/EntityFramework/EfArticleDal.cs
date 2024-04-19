@@ -12,7 +12,7 @@ namespace Blogy.DataAccessLayer.EntityFramework
 
         public List<Article> GetArticlesByWriterId(int id)
         {
-            var values = _context.Articles.Where(a=> a.AppUserId == id).ToList();
+            var values = _context.Articles.Include(c=> c.Category).Where(a=> a.AppUserId == id).ToList();
 			return values;
         }
 

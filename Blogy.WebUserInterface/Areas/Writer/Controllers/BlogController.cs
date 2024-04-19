@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 namespace Blogy.WebUserInterface.Areas.Blogy.WriterArea.Controllers
 {
     [Area("Writer")]
+    [Route("Writer/{controller}/{action}/{id?}")]
     public class BlogController : Controller
     {
         private readonly IArticleService _articleService;
@@ -22,10 +23,9 @@ namespace Blogy.WebUserInterface.Areas.Blogy.WriterArea.Controllers
         }
 
         public async Task<IActionResult> MyBlogList()
-        {
+        {          
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
-            //ViewBag.UserInfo = user.FirstName + " " + user.LastName;
-            var values = _articleService.TGetArticlesByWriterId(user.Id);
+            var values = _articleService.TGetArticlesByWriterId(user.Id);            
             return View(values);
         }
 
@@ -35,6 +35,7 @@ namespace Blogy.WebUserInterface.Areas.Blogy.WriterArea.Controllers
             GetCategoryName();
             return View();
         }
+
         [HttpPost]
         public async Task<IActionResult> CreateArticle(Article article)
         {
@@ -44,13 +45,13 @@ namespace Blogy.WebUserInterface.Areas.Blogy.WriterArea.Controllers
             article.CreatedDate = DateTime.Now;
             _articleService.TAdd(article);
                     
-            return RedirectToAction("MyBlogList", "Blog");
+            return RedirectToAction("MyBlogList");
         }
 
         public ActionResult DeleteArticle(int id)
         {
              _articleService.TDelete(id);
-            return RedirectToAction("MyBlogList", "Blog");
+            return RedirectToAction("MyBlogList");
         }
         public void GetCategoryName()
         {
