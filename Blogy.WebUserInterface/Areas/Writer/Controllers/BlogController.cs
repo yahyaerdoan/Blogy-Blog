@@ -40,9 +40,7 @@ namespace Blogy.WebUserInterface.Areas.Blogy.WriterArea.Controllers
         public async Task<IActionResult> CreateArticle(Article article)
         {
             var values = await _userManager.FindByNameAsync(User.Identity.Name);
-            article.AppUserId = values.Id;
-            article.WriterId = 1;
-            article.CreatedDate = DateTime.Now;
+            article.AppUserId = values.Id;         
             _articleService.TAdd(article);
                     
             return RedirectToAction("MyBlogList");

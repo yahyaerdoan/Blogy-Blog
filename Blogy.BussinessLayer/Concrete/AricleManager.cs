@@ -18,6 +18,8 @@ namespace Blogy.BussinessLayer.Concrete
         {
             if (entity.Title!= null && entity.Description.Length>50 && entity.CategoryId >=0)
             {
+                entity.WriterId = 1;
+                entity.CreatedDate = DateTime.Now;
                 _articledal.Add(entity);
             }
             else
