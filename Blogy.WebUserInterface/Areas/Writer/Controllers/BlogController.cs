@@ -21,21 +21,18 @@ namespace Blogy.WebUserInterface.Areas.Blogy.WriterArea.Controllers
             _userManager = userManager;
             _categoryService = categoryService;
         }
-
         public async Task<IActionResult> MyBlogList()
         {          
             var user = await _userManager.FindByNameAsync(User.Identity.Name);
             var values = _articleService.TGetArticlesByWriterId(user.Id);            
             return View(values);
         }
-
         [HttpGet]
         public async Task<IActionResult> CreateArticle()
         {
             GetCategoryName();
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> CreateArticle(Article article)
         {
@@ -45,7 +42,6 @@ namespace Blogy.WebUserInterface.Areas.Blogy.WriterArea.Controllers
                     
             return RedirectToAction("MyBlogList");
         }
-
         public ActionResult DeleteArticle(int id)
         {
              _articleService.TDelete(id);

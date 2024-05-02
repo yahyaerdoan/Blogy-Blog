@@ -18,7 +18,6 @@ namespace Blogy.WebUserInterface.Controllers.AdminController
         {
             return View();
         }
-
         [HttpPost]
         public async Task<IActionResult> Index(UserSignInViewModel userSignInViewModel)
         {
